@@ -1,0 +1,256 @@
+.loader {
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.90);
+  animation: loader 0.01s;
+  animation-delay: 1.75s;
+  animation-fill-mode: both;
+  z-index: 10000;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  &__item {
+    height: 16px;
+    width: 16px;
+    border-radius: 16px;
+    animation: jump 1s;
+    animation-iteration-count: 1;
+
+    &Container {
+      display: flex;
+      width: 80px;
+      justify-content: space-between;
+    }
+
+    &--1 {
+      background-color: $color-primary;
+    }
+  
+    &--2 {
+      background-color: $color-secondary;
+      animation-delay: 0.25s;
+    }
+  
+    &--3 {
+      background-color: $color-tertiary;
+      animation-delay: 0.5s;
+    }
+  }
+}
+
+.localisation {
+  display: flex;
+  justify-content: center;
+  padding: 20px $appPadding;
+  background-color: rgb(243, 243, 243);
+  font-size: 19px;
+  position: relative;
+
+  &__icon {
+    margin-right: 16px;
+  }
+
+  &__text {
+    font-weight: 700;
+    font-size: 19px;
+    margin: 0;
+  }
+}
+
+.about {
+  padding: 32px;
+  text-align: center;
+  background-color: rgb(250, 250, 250);
+
+  &__title {
+    margin: 0;
+  }
+
+  &__subtitle {
+    font-weight: 300;
+    margin: 24px 0;
+  }
+
+  &__btn {
+    @include button(primary);
+  }
+}
+
+.function {
+  padding: ( $appPadding + 16px ) $appPadding;
+
+  &__title {
+    margin-top: 0;
+  }
+
+  &__steps {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: compteListe;
+
+    @media (min-width:1024px) {
+      display: flex;
+    }
+  }
+
+  
+  &__step {
+    padding: 24px;
+    margin: 16px 0 16px 12px;
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.125);
+    border-radius: 20px;
+    background-color: #f6f6f6;
+    display: flex;
+    position: relative;
+    
+    @media (min-width:1024px) {
+      flex: 1;
+      margin: 0;
+      margin-left: 32px;
+      
+      &:first-child {
+        margin-left: 12px;
+      }
+    }
+    
+    &:first-child {
+      margin-top: 0;
+    }
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+    
+    &::before {
+      counter-increment: compteListe 1;
+      // content: counter(compteListe) " ";
+      background: $color-primary;
+      height: 24px;
+      width: 24px;
+      border-radius: 100px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      position: absolute;
+      left: -12px;
+    }
+
+    &:hover {
+      background-color: rgba(159, 90, 253, .4);
+      cursor: pointer;
+    }
+  }
+  
+  &__icon {
+    margin-right: 16px;
+    color: #7e7e7e;
+  }
+
+  &__number {
+    margin-right: 16px;
+    
+  }
+}
+
+.restaurants {
+  background-color: #f6f6f6;
+  padding: ($appPadding + 16px) $appPadding;
+
+  &__title {
+    margin-top: 0;
+  }
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  column-gap: 32px;
+  row-gap: 32px;
+/*   display: flex;
+  flex-direction: column; */
+
+  @media (min-width:1024px) {
+    grid-template-columns: repeat(2, 1fr);
+/*     display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap; */
+  }
+}
+
+.card {
+  background-color: white;
+  border-radius: 16px;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
+  transition: .2s;
+  &__img {
+    height: 192px;
+    width: 100%;
+    border: transparent solid 0px;
+    border-radius: 16px 16px 0 0;
+    box-shadow: none;
+    object-fit: cover;
+  }
+
+  &__badge {
+    background-color: $color-tertiary;
+    color: darken($color-tertiary, 50%);
+    padding: 8px;
+    border-radius: 2px;
+    position: absolute;
+    top: 16px;
+    right: 12px;
+  }
+
+  &__footer {
+    padding: 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__content {
+    flex: 1;
+  }
+
+  &__title {
+    margin: 0;
+    margin-bottom: 4px;
+  }
+
+  &__subtitle {
+    margin: 0;
+  }
+
+  &__btn {
+    height: 32px;
+    width: 32px;
+    background-color: transparent;
+    border: transparent 0px solid;
+    padding: 0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  &__like {
+    background-color: white!important;
+  }
+  &:hover {
+    -ms-transform: scale(1.019); /* Internet explorer 9 */
+    -webkit-transform: scale(1.019); /* Safari 3-8 */
+    transform: scale(1.015); 
+  }
+  &:active{
+    box-shadow: inset 0 0 10px 0 rgba(0, 0, 0, 0.25);
+  }
+}
