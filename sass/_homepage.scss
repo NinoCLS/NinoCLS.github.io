@@ -128,7 +128,6 @@
     
     &::before {
       counter-increment: compteListe 1;
-      // content: counter(compteListe) " ";
       background: $color-primary;
       height: 24px;
       width: 24px;
@@ -172,14 +171,9 @@
   grid-template-columns: repeat(1, 1fr);
   column-gap: 32px;
   row-gap: 32px;
-/*   display: flex;
-  flex-direction: column; */
 
   @media (min-width:1024px) {
     grid-template-columns: repeat(2, 1fr);
-/*     display: flex;
-    justify-content: space-between;
-    flex-flow: row wrap; */
   }
 }
 
@@ -246,8 +240,8 @@
     background-color: white!important;
   }
   &:hover {
-    -ms-transform: scale(1.019); /* Internet explorer 9 */
-    -webkit-transform: scale(1.019); /* Safari 3-8 */
+    -ms-transform: scale(1.019); /* Internet explorer */
+    -webkit-transform: scale(1.019); /* Safari */
     transform: scale(1.015); 
   }
   &:active{
