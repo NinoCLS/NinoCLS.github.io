@@ -262,15 +262,10 @@ body, html {
   grid-template-columns: repeat(1, 1fr);
   column-gap: 32px;
   row-gap: 32px;
-  /*   display: flex;
-    flex-direction: column; */
 }
 @media (min-width: 1024px) {
   .cards {
     grid-template-columns: repeat(2, 1fr);
-    /*     display: flex;
-        justify-content: space-between;
-        flex-flow: row wrap; */
   }
 }
 
@@ -332,9 +327,9 @@ body, html {
 }
 .card:hover {
   -ms-transform: scale(1.019);
-  /* Internet explorer 9 */
+  /* Internet explorer */
   -webkit-transform: scale(1.019);
-  /* Safari 3-8 */
+  /* Safari */
   transform: scale(1.015);
 }
 .card:active {
@@ -456,17 +451,51 @@ body, html {
   bottom: 0;
 }
 
+.delay-0 {
+  animation: itemAppear 0s;
+}
+
+.delay-1 {
+  animation: itemAppear 0.2s;
+}
+
+.delay-2 {
+  animation: itemAppear 0.4s;
+}
+
+.delay-3 {
+  animation: itemAppear 0.6s;
+}
+
+.delay-4 {
+  animation: itemAppear 0.8s;
+}
+
+.delay-5 {
+  animation: itemAppear 1s;
+}
+
+.delay-6 {
+  animation: itemAppear 1.2s;
+}
+
+.delay-7 {
+  animation: itemAppear 1.4s;
+}
+
+.delay-8 {
+  animation: itemAppear 1.6s;
+}
+
 .menuItem {
   background-color: white;
   padding: 16px;
   display: flex;
   border-radius: 12px;
   margin: 16px 0;
-  box-shadow: 4px 4px 1rem rgba(0, 0, 0, 0.1);
+  box-shadow: 4px 4px 16px rgba(0, 0, 0, 0.1);
   overflow: hidden;
   cursor: pointer;
-  animation: itemAppear 0.6s;
-  animation-timing-function: cubic-bezier(0.5, 1.58, 0.34, 0.82);
   animation-fill-mode: both;
   transform: scale(0);
   max-width: 100%;
