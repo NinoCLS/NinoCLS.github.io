@@ -192,12 +192,23 @@ body, html {
   margin: 0;
   padding: 0;
   list-style: none;
-  counter-reset: compteListe;
 }
 @media (min-width: 1024px) {
   .function__steps {
     display: flex;
   }
+}
+.function__number {
+  background: #9356DC;
+  height: 24px;
+  width: 24px;
+  border-radius: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  position: absolute;
+  left: -12px;
 }
 .function__step {
   padding: 24px;
@@ -223,19 +234,6 @@ body, html {
 }
 .function__step:last-child {
   margin-bottom: 0;
-}
-.function__step::before {
-  counter-increment: compteListe 1;
-  background: #9356DC;
-  height: 24px;
-  width: 24px;
-  border-radius: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  position: absolute;
-  left: -12px;
 }
 .function__step:hover {
   background-color: rgba(159, 90, 253, 0.4);

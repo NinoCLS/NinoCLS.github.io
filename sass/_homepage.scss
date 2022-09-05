@@ -91,11 +91,23 @@
     margin: 0;
     padding: 0;
     list-style: none;
-    counter-reset: compteListe;
 
     @media (min-width:1024px) {
       display: flex;
     }
+  }
+
+  &__number {
+    background: $color-primary;
+    height: 24px;
+    width: 24px;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: absolute;
+    left: -12px;
   }
 
   
@@ -124,20 +136,6 @@
     
     &:last-child {
       margin-bottom: 0;
-    }
-    
-    &::before {
-      counter-increment: compteListe 1;
-      background: $color-primary;
-      height: 24px;
-      width: 24px;
-      border-radius: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      position: absolute;
-      left: -12px;
     }
 
     &:hover {
@@ -186,6 +184,7 @@
   display: block;
   box-shadow: 0 0 10px 0 rgb(0 0 0 / 30%);
   transition: .2s;
+
   &__img {
     height: 192px;
     width: 100%;
