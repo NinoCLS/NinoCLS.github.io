@@ -324,8 +324,6 @@ body, html {
   background-color: white !important;
 }
 .card:hover {
-  -ms-transform: scale(1.019);
-  /* Internet explorer */
   -webkit-transform: scale(1.019);
   /* Safari */
   transform: scale(1.015);
@@ -393,7 +391,6 @@ body, html {
 .menu__btn::before {
   opacity: 0;
   transition: 0.5s;
-  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -440,7 +437,6 @@ body, html {
   font-weight: normal;
 }
 .submenu__title::after {
-  content: "";
   width: 48px;
   height: 4px;
   background-color: #99E2D0;
